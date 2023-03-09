@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Home Page</title>
+</head>
+<body>
+<form action="http://localhost:3000/process-bmi" method="POST" id="bmi-form">
+    <input type="text" name="Name" placeholder="Enter yor Name"/><br>
+    <input type="text" name="Height" placeholder="Enter yor Height"/><br>
+    <input type="text" name="Weight" placeholder="Enter yor Weight"/><br>
+    <input type="submit" name="btn_calculate" value="Calculate BMI"/>
+</form>
+<script>
+    const server = 'http://localhost:3000';
+    var bmiId;
+    var bmiHeight;
+    var bmiWeight;
+    var bmi;
+
+    async function fetchBmi() {
+        const url = server + '/bmi';
+        const options = {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json'
+            }
+        }
+        const response = await fetch(url, options);
+        const bmi = await response.json();
+        populateContent(bmi);
+    }
+
+function populateContent(users) {
+        var table = document.getElementById('content');
+        table.innerHTML = "<tr><th>Name</th><th>Height</th>Weight</th>BMI</th></tr>"";
+        bmi.forEach(bmis => {
+            var row = document.createElement('tr');
+            var dataId = document.createElement('td');
+            var textId = document.createTextNode(bmis.id);
+            dataId.appendChild(textId);
+            var dataName = document.createElement('td');
+            var textName = document.createTextNode(bmis.Height);
+            dataName.appendChild(textName);
+            var dataName = document.createElement('td');
+            var textName = document.createTextNode(bmis.Weight);
+            dataName.appendChild(textName);
+            var dataName = document.createElement('td');
+            var textName = document.createTextNode(bmis.Totals);
+            dataName.appendChild(textName);
+            row.appendChild(dataId);
+            row.appendChild(dataName);
+            table.appendChild(row);
+
+            
+
+           
+           
+
+        });
+    }
+
+    document.querySelector('form').addEventListener('submit', (e) => {
+        studName = document.getElementById('name').value;
+        studId = document.getElementById('studId').value;
+        studEmail = document.getElementById('email').value;
+        studPass = document.getElementById('password').value;
+        if (studId && studName && studEmail && studPass) {
+            studId = parseInt(studId);
+            addUser();
+            fetchUsers();
+        }
+        e.preventDefault();
+    }); 
+</script>
+</body>
+
+</html>
+
