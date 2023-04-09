@@ -1,0 +1,91 @@
+# Script to deploy on the render cloud platform 
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - uses: bounceapp/render-actions@0.6.0
+      with:
+        render-token: ${{secrets.RENDER_API_KEY}}
+        github-token: ${{secrets.ACC_API_KEY}}  # This is the github token
+        service-id: "# Script to deploy on the render cloud platform 
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - uses: bounceapp/render-actions@0.6.0
+      with:
+        render-token: ${{secrets.RENDER_API_KEY}}
+        github-token: ${{secrets.ACC_API_KEY}}  # This is the github token
+        service-id: "# Script to deploy on the render cloud platform 
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - uses: bounceapp/render-actions@0.6.0
+      with:
+        render-token: ${{secrets.RENDER_API_KEY}}
+        github-token: ${{secrets.ACC_API_KEY}}  # This is the github token
+        service-id: "# Script to deploy on the render cloud platform 
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - uses: bounceapp/render-actions@0.6.0
+      with:
+        render-token: ${{secrets.RENDER_API_KEY}}
+        github-token: ${{secrets.ACC_API_KEY}}  # This is the github token
+        service-id: "srv-cg9da0seooghng7klfn0?"
+        retries: 20
+        wait: 16000
+        sleep: 30000
+       
+        
+
